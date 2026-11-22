@@ -30,6 +30,25 @@ We also continue to maintain tools such as:
 - [ethers.js fork](https://github.com/Zilliqa/ethers.js) - to support the non-canonical signatures of non-EVM Zilliqa transactions (Schnorr signatures)
 - [otterscan fork](https://github.com/Zilliqa/otterscan) - to add the ability to understand non-EVM (Scilla) transactions
 
+### Evaluating additional SDKs
+
+For a shortlist of third-party tools, [Chain.Love](https://chain.love)
+includes a Zilliqa SDK catalogue. Verify compatibility with the package's
+own documentation before choosing it; a directory listing is not an
+endorsement or a guarantee that every Zilliqa method is implemented.
+
+First decide whether the application uses EVM contracts or native Scilla
+contracts. Standard EVM tooling does not by itself establish support for
+Scilla or the Schnorr-signed non-EVM transactions described above. Check
+the package's supported contract types, API methods and target
+[network](endpoints.md), alongside its language and version requirements.
+
+Also follow the [Zilliqa 2.0 differences](changes.md) when handling addresses
+and amounts: changing a native address between base16 and bech32 does not
+produce an EVM address, and non-EVM Qa and EVM Wei use different scales.
+The native SDKs and maintained forks above remain the reference for those
+Zilliqa-specific requirements.
+
 ### Open-source repositories
 
 We provide a number of open-source repositories relevant to Zilliqa 2.0:
